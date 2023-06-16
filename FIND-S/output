@@ -1,4 +1,4 @@
-     sky air temp humidity    wind water forecast enjoy sport
+       sky air temp humidity    wind water forecast enjoy sport
 0     sunny     warm   normal  strong  warm     same          no
 1     sunny     warm     high  strong  warm     same          no
 2     rainy     cold     high  strong  warm   change          no
@@ -22,3 +22,4 @@
  The target concept is:  ['no' 'no' 'no' 'yes' 'no' 'no' 'no' 'yes']
 
  The final hypothesis is: ['?' '?' 'high' 'strong' '?' '?']
+Accuracy: 0.75
