@@ -1,0 +1,68 @@
+Instances are:
+ [['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+ ['sunny' 'warm' 'high' 'strong' 'warm' 'same']
+ ['rainy' 'cold' 'high' 'strong' 'warm' 'change']
+ ['sunny' 'warm' 'high' 'strong' 'cool' 'change']
+ ['overcast' 'hot' 'normal' 'weak' 'cool' 'change']
+ ['sunny' 'mild' 'normal' 'weak' 'cool' 'same']
+ ['rainy' 'mild' 'high' 'weak' 'cool' 'same']
+ ['overcast' 'mild' 'high' 'strong' 'warm' 'same']]
+
+Target Values are:  ['no' 'no' 'no' 'yes' 'no' 'no' 'no' 'yes']
+
+Specific Boundary:  ['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+
+Generic Boundary:  [['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+Instance 1 is ['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+Specific Boundary = ['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+Generic Boundary = [['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 2 is ['sunny' 'warm' 'high' 'strong' 'warm' 'same']
+Specific Boundary = ['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+Generic Boundary = [['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', 'normal', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 3 is ['rainy' 'cold' 'high' 'strong' 'warm' 'change']
+Specific Boundary = ['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+Generic Boundary = [['sunny', '?', '?', '?', '?', '?'], ['?', 'warm', '?', '?', '?', '?'], ['?', '?', 'normal', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', 'same']]
+
+
+
+Instance 4 is ['sunny' 'warm' 'high' 'strong' 'cool' 'change']
+Specific Boundary = ['sunny' 'warm' '?' 'strong' '?' '?']
+Generic Boundary = [['sunny', '?', '?', '?', '?', '?'], ['?', 'warm', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 5 is ['overcast' 'hot' 'normal' 'weak' 'cool' 'change']
+Specific Boundary = ['sunny' 'warm' '?' 'strong' '?' '?']
+Generic Boundary = [['sunny', '?', '?', '?', '?', '?'], ['?', 'warm', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', 'strong', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 6 is ['sunny' 'mild' 'normal' 'weak' 'cool' 'same']
+Specific Boundary = ['sunny' 'warm' '?' 'strong' '?' '?']
+Generic Boundary = [['?', '?', '?', '?', '?', '?'], ['?', 'warm', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', 'strong', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 7 is ['rainy' 'mild' 'high' 'weak' 'cool' 'same']
+Specific Boundary = ['sunny' 'warm' '?' 'strong' '?' '?']
+Generic Boundary = [['sunny', '?', '?', '?', '?', '?'], ['?', 'warm', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', 'strong', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+
+Instance 8 is ['overcast' 'mild' 'high' 'strong' 'warm' 'same']
+Specific Boundary = ['?' '?' '?' 'strong' '?' '?']
+Generic Boundary = [['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', 'strong', '?', '?'], ['?', '?', '?', '?', '?', '?'], ['?', '?', '?', '?', '?', '?']]
+
+
+The Final Specific_h:
+['?' '?' '?' 'strong' '?' '?']
+The Final General_h:
+[['?', '?', '?', 'strong', '?', '?']]
+Accuracy: 0.75
