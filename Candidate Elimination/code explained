@@ -1,0 +1,45 @@
+import numpy as np and import pandas as pd: These lines import the necessary libraries numpy and pandas for array and data manipulation.
+
+data = pd.read_csv("/content/find-s_dataset.csv"): Reads the CSV file "find-s_dataset.csv" and loads the data into a pandas DataFrame called data.
+
+concepts = np.array(data.iloc[:, 0:-1]): Extracts the input features from the DataFrame data and converts them into a numpy array. It selects all rows and all columns except the last one.
+
+print("\nInstances are:\n", concepts): Prints the extracted input features (instances).
+
+target = np.array(data.iloc[:, -1]): Extracts the target variable from the DataFrame data and converts it into a numpy array. It selects all rows and the last column.
+
+print("\nTarget Values are: ", target): Prints the extracted target variable.
+
+def learn(concepts, target):: Defines a function called learn that takes concepts and target as inputs.
+
+specific_h = concepts[0].copy(): Initializes the specific_h hypothesis with the first instance from concepts array. The .copy() method ensures that a new copy of the array is created.
+
+print("\nSpecific Boundary: ", specific_h): Prints the initial value of specific_h.
+
+general_h = [["?" for _ in range(len(specific_h))] for _ in range(len(specific_h))]: Initializes the general_h hypothesis with a 2D list containing "?" for each attribute. It has the same shape as specific_h.
+
+print("\nGeneric Boundary: ", general_h): Prints the initial value of general_h.
+
+for i, h in enumerate(concepts):: Iterates over each instance h in concepts along with its index i.
+
+print("\nInstance", i+1 , "is", h): Prints the index and value of the current instance.
+
+if target[i] == "yes":: Checks if the target value for the current instance is "yes".
+
+for x in range(len(specific_h)):: Iterates over each attribute x in specific_h.
+
+if h[x] != specific_h[x]:: Checks if the attribute value of the current instance differs from the corresponding attribute value in specific_h.
+
+specific_h[x] = '?': Updates the attribute value in specific_h to "?".
+
+general_h[x][x] = '?': Updates the attribute value in general_h at the specific position to "?".
+
+if target[i] == "no":: Checks if the target value for the current instance is "no".
+
+for x in range(len(specific_h)):: Iterates over each attribute x in specific_h.
+
+if h[x] != specific_h[x]:: Checks if the attribute value of the current instance differs from the corresponding attribute value in specific_h.
+
+general_h[x][x] = specific_h[x]: Updates the attribute value in general_h at the specific position to the attribute value in specific_h.
+
+indices = [i for i, val in enumerate(general_h) if val == ['?', '?', '?', '?', '?', '?']]: Creates a list indices containing the indices of rows in general_h where all attribute values are "?".
