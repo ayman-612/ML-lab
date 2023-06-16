@@ -1,22 +1,21 @@
-
 import numpy as np
 import pandas as pd
 
 data = pd.read_csv(r"/content/find-s_dataset.csv")
-print(data,"\n")
+print(data, "\n")
 
-d = np.array(data)[:,:-1]
-print("\n The attributes are: \n",d)
-tc = np.array(data)[:,-1]
-print("\n The target concept is: ",tc)
- 
- 
-def findS(c,t):
+d = np.array(data)[:, :-1]
+print("\n The attributes are: \n", d)
+tc = np.array(data)[:, -1]
+print("\n The target concept is: ", tc)
+
+
+def findS(c, t):
     for i, ex in enumerate(t):
         if ex == "yes":
             more_specific_hypo = c[i].copy()
             break
-             
+
     for i, a in enumerate(c):
         if t[i] == "yes":
             for x in range(len(more_specific_hypo)):
@@ -24,7 +23,25 @@ def findS(c,t):
                     more_specific_hypo[x] = '?'
                 else:
                     pass
-                 
+
     return more_specific_hypo
- 
-print("\n The final hypothesis is:",findS(d,tc))
+
+
+# Assuming you have the true labels in an array called true_labels
+true_labels = np.array(data)[:, -1]
+true_labels = true_labels[:len(d)]
+
+# Find-S Algorithm
+final_hypothesis = findS(d, tc)
+print("\n The final hypothesis is:", final_hypothesis)
+
+# Calculate accuracy
+predicted_labels = []
+for instance in d:
+    if np.array_equal(instance, final_hypothesis):
+        predicted_labels.append("yes")
+    else:
+        predicted_labels.append("no")
+
+accuracy = np.mean(predicted_labels == true_labels)
+print("Accuracy:", accuracy)
