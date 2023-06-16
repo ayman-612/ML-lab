@@ -1,0 +1,30 @@
+
+import numpy as np
+import pandas as pd
+
+data = pd.read_csv(r"/content/find-s_dataset.csv")
+print(data,"\n")
+
+d = np.array(data)[:,:-1]
+print("\n The attributes are: \n",d)
+tc = np.array(data)[:,-1]
+print("\n The target concept is: ",tc)
+ 
+ 
+def findS(c,t):
+    for i, ex in enumerate(t):
+        if ex == "yes":
+            more_specific_hypo = c[i].copy()
+            break
+             
+    for i, a in enumerate(c):
+        if t[i] == "yes":
+            for x in range(len(more_specific_hypo)):
+                if a[x] != more_specific_hypo[x]:
+                    more_specific_hypo[x] = '?'
+                else:
+                    pass
+                 
+    return more_specific_hypo
+ 
+print("\n The final hypothesis is:",findS(d,tc))
