@@ -1,0 +1,24 @@
+     sky air temp humidity    wind water forecast enjoy sport
+0     sunny     warm   normal  strong  warm     same          no
+1     sunny     warm     high  strong  warm     same          no
+2     rainy     cold     high  strong  warm   change          no
+3     sunny     warm     high  strong  cool   change         yes
+4  overcast      hot   normal    weak  cool   change          no
+5     sunny     mild   normal    weak  cool     same          no
+6     rainy     mild     high    weak  cool     same          no
+7  overcast     mild     high  strong  warm     same         yes 
+
+
+ The attributes are: 
+ [['sunny' 'warm' 'normal' 'strong' 'warm' 'same']
+ ['sunny' 'warm' 'high' 'strong' 'warm' 'same']
+ ['rainy' 'cold' 'high' 'strong' 'warm' 'change']
+ ['sunny' 'warm' 'high' 'strong' 'cool' 'change']
+ ['overcast' 'hot' 'normal' 'weak' 'cool' 'change']
+ ['sunny' 'mild' 'normal' 'weak' 'cool' 'same']
+ ['rainy' 'mild' 'high' 'weak' 'cool' 'same']
+ ['overcast' 'mild' 'high' 'strong' 'warm' 'same']]
+
+ The target concept is:  ['no' 'no' 'no' 'yes' 'no' 'no' 'no' 'yes']
+
+ The final hypothesis is: ['?' '?' 'high' 'strong' '?' '?']
